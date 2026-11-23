@@ -1,0 +1,98 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "classes": [
+    {
+      "id": "ClassPharloom",
+      "titles": {
+        "english": "Pharloom"
+      },
+      "descriptions": {
+        "english": "Embark as the forces of Pharloom against the Titan incursion."
+      },
+      "subclass_descriptions": {
+        "english": "Pharloom comes to the aid of Hell!"
+      },
+      "event_titles": {
+        "english": "<wonderous>Pilgrim</wonderous>"
+      },
+      "icons": {
+        "small": "@PharloomClanSmallIcon",
+        "medium": "@PharloomClanMediumIcon",
+        "large": "@PharloomClanLargeIcon",
+        "silhouette": "@PharloomClanSilhouetteIcon"
+      },
+      "card_draft_icon": "@PharloomCardDraftIcon",
+      "class_select_character_displays": [
+        "@PharloomChampionHornetClassDisplayCharacterArt"
+      ],
+      "card_style": "@PharloomClanCardStyle",
+      "ui_color": {
+        "r": 0.804,
+        "g": 0.447,
+        "b": 0.196
+      },
+      "ui_color_dark": {
+        "r": 0.494,
+        "g": 0.275,
+        "b": 0.122
+      },
+      "ui_gradient": [
+        {
+          "time": 0.0,
+          "color": {
+            "r": 0.804,
+            "g": 0.447,
+            "b": 0.196
+          }
+        },
+        {
+          "time": 1.0,
+          "color": {
+            "r": 0.494,
+            "g": 0.275,
+            "b": 0.122
+          }
+        }
+      ],
+      "champions": [
+        {
+          "id": "PharloomChampionHornet",
+          "card_data": "@PharloomChampionHornetCard",
+          "starter_card": "@PharloomHornetStarterSpell",
+          "upgrade_tree": [
+            [
+              "@PharloomChampionHornetUpgradePathI",
+              "@PharloomChampionHornetUpgradePathII",
+              "@PharloomChampionHornetUpgradePathIII"
+            ]
+          ],
+          "icon": "@PharloomClanBannerMinimapIcon",
+          "locked_icon": "@PharloomChampionHornetLockedIcon",
+          "portrait": "@PharloomChampionHornetPortrait"
+        }
+      ]
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PharloomClanSmallIcon",
+      "path": "textures/icons/BasicClanSmallIcon.png"
+    },
+    {
+      "id": "PharloomClanMediumIcon",
+      "path": "textures/icons/BasicClanMediumIcon.png"
+    },
+    {
+      "id": "PharloomClanLargeIcon",
+      "path": "textures/icons/BasicClanLargeIcon.png"
+    },
+    {
+      "id": "PharloomClanSilhouetteIcon",
+      "path": "textures/icons/BasicClanSilhouetteIcon.png"
+    },
+    {
+      "id": "PharloomCardDraftIcon",
+      "path": "textures/icons/BasicClanCardDraft.png"
+    }
+  ]
+}

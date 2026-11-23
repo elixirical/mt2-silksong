@@ -1,0 +1,26 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "class_card_styles": [
+    {
+      "id": "PharloomClanCardStyle",
+      "equipment_card_frame_sprite": "@PharloomClanEquipmentRoomBorder",
+      "unit_card_frame_sprite": "@PharloomClanUnitBorder",
+      "room_card_frame_sprite": "@PharloomClanEquipmentRoomBorder",
+      "spell_card_frame_sprite": "@PharloomClanSpellBorder"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PharloomClanEquipmentRoomBorder",
+      "path": "textures/card_borders/BasicCardBorderEquipmentRoom.png"
+    },
+    {
+      "id": "PharloomClanUnitBorder",
+      "path": "textures/card_borders/BasicCardBorderUnit.png"
+    },
+    {
+      "id": "PharloomClanSpellBorder",
+      "path": "textures/card_borders/BasicCardBorderSpell.png"
+    }
+  ]
+}

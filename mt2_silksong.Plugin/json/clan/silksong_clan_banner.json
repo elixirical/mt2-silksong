@@ -1,0 +1,97 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "map_nodes": [
+    {
+      "id": "RewardNodeUnitPackPharloomClan",
+      "type": "reward",
+      "map_icon": "@PharloomBannerMapIcon",
+      "minimap_icon": "@PharloomClanBannerMinimapIcon",
+      "prefab": "@PharloomClanMapIcon",
+      "titles": {
+        "english": "Pharloom Banner"
+      },
+      "descriptions": {
+        "english": "Gain a Pharloom Unit"
+      },
+      "pools": [
+        "RandomChosenMainClassUnit",
+        "RandomChosenSubClassUnit"
+      ],
+      "is_banner_node": true,
+      "extensions": [
+        {
+          "reward": {
+            "class": "@ClassPharloom",
+            "rewards": [
+              "@PharloomBannerReward"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "id": "PharloomBannerReward",
+      "type": "draft",
+      "costs": [ 100 ],
+      "extensions": [
+        {
+          "draft": {
+            "draft_pool": "@UnitsPharloomClanBanner",
+            "class_type": "main|subclass|nonclass",
+            "draft_options_count": 2,
+            "rarity_floor": "uncommon",
+            "ignore_relic_rarity_override": true,
+            "is_service_merchant_reward": true
+          }
+        }
+      ]
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "UnitsPharloomClanBanner"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "PharloomClanMapIcon",
+      "type": "map_node_icon",
+      "extensions": {
+        "map_node_icon": {
+          "disabled_sprite": "@PharloomBannerDisabledMapIcon",
+          "enabled_sprite": "@PharloomBannerEnabledMapIcon",
+          "frozen_sprite": "@PharloomBannerFrozenMapIcon",
+          "visited_sprite_disabled": "@PharloomBannerVisitedDisabledIcon"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PharloomBannerMapIcon",
+      "path": "textures/banners/PharloomBanner_MapIcon.png"
+    },
+    {
+      "id": "PharloomClanBannerMinimapIcon",
+      "path": "textures/banners/PharloomClanBannerMinimapIcon.png"
+    },
+    {
+      "id": "PharloomBannerDisabledMapIcon",
+      "path": "textures/banners/PharloomBanner_Disabled.png"
+    },
+    {
+      "id": "PharloomBannerEnabledMapIcon",
+      "path": "textures/banners/PharloomBanner_Enabled.png"
+    },
+    {
+      "id": "PharloomBannerFrozenMapIcon",
+      "path": "textures/banners/PharloomBanner_Frozen.png"
+    },
+    {
+      "id": "PharloomBannerVisitedDisabledIcon",
+      "path": "textures/banners/PharloomBanner_VisitedDisabled.png"
+    }
+  ]
+}
