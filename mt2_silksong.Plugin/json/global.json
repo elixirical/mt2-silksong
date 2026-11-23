@@ -5,5 +5,10 @@
       "id": "Consume",
       "name": "CardTraitExhaustState"
     }
+  ],
+  "tracked_value_types": [
+    {
+      "id": "SilkCounter"
+    }
   ]
 }

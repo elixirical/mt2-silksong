@@ -6,7 +6,7 @@ using TrainworksReloaded.Core.Extensions;
 
 namespace mt2_silksong.Plugin
 {
-    [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin("elixirical.mt2_silksong", "MT2: Silksong", "0.1")]
     public class Plugin : BaseUnityPlugin
     {
         internal static new ManualLogSource Logger = new(MyPluginInfo.PLUGIN_GUID);
@@ -53,8 +53,8 @@ namespace mt2_silksong.Plugin
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
 
             // Uncomment if you need Harmony Patch support.
-            //var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
-            //harmony.PatchAll();
+            var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+            harmony.PatchAll();
 
         }
     }
