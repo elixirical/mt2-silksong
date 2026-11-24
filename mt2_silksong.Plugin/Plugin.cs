@@ -1,8 +1,12 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using Conductor.TrackedValues;
 using HarmonyLib;
+using TrainworksReloaded.Base;
+using TrainworksReloaded.Base.Extensions;
 using TrainworksReloaded.Core;
 using TrainworksReloaded.Core.Extensions;
+using TrainworksReloaded.Core.Interfaces;
 
 namespace mt2_silksong.Plugin
 {
@@ -35,6 +39,7 @@ namespace mt2_silksong.Plugin
                         // Required: A Clan Champion with one Upgrade Path.
                         "json/champions/silksong_champion.json",
                         // Spell Cards
+                        "json/pharloom_cards/scaling_heal.json",
                         "json/pharloom_cards/spells/hornet_silk_heal.json",
                         "json/spells/NotHornBreak.json",
                         "json/spells/GiveEveryoneArmor.json",
@@ -55,7 +60,6 @@ namespace mt2_silksong.Plugin
             // Uncomment if you need Harmony Patch support.
             var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
             harmony.PatchAll();
-
         }
     }
 }

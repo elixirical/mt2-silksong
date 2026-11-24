@@ -1,0 +1,64 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "PharloomScalingHeal",
+      "cost": 2,
+      "card_type": "spell",
+      "names": {
+        "english": " Heal"
+      },
+      "descriptions": {
+        "english": "Restore [effect0.power]x[trait0.power] health to a unit."
+      },
+      "rarity": "common",
+      "targets_room": true,
+      "targetless": false,
+      "class": "@ClassPharloom",
+      "card_art": "@PharloomScalingHealStarterCardArt",
+      "effects": [ "@PharloomScalingHealThree"],
+      "traits": ["@ScaleHealbySilk" ],
+      "pools": ["MegaPool"],
+      "lore_tooltips": [
+        {
+          "english": "Starter card for Hornet"
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "PharloomScalingHealThree",
+      "name": "CardEffectHeal",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_int": 3
+    }
+  ],
+  "traits":
+  [
+    {
+      "id": "ScaleHealbySilk",
+      "name": "CardTraitScalingHeal",
+      "param_tracked_value": "@mt2ss_silkcounter",
+      "param_entry_duration": "this_battle"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "PharloomScalingHealCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@PharloomScalingHealCardSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PharloomScalingHealCardSprite",
+      "path": "textures/card_art/ChampionAStarter.png"
+    }
+  ]
+}
