@@ -2,77 +2,117 @@
   "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
   "cards": [
     {
-      "id": "SkarrScout",
+      "id": "SkarrStalker",
       "names": {
-        "english": "Skarr Scout"
+        "english": "Skarr Stalker"
       },
-      "card_art": "@SkarrScoutCardArt",
-      "cost": 1,
+      "card_art": "@SkarrStalkerCardArt",
+      "cost": 2,
       "card_type": "monster",
       "rarity": "common",
       "class": "@ClassSkarr",
       "targets_room": true,
       "targetless": false,
       "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
-      "effects": [ "@SpawnSkarrScoutDraftUnit" ],
+      "effects": [ "@SpawnSkarrStalkerDraftUnit" ],
       "lore_tooltips": [
         {
-          "english": "Young ant hunter wielding sickles carved from teeth. Will often call for aid if danger comes close."
+          "english": "Skilled ant hunter bearing blade and armour fashioned from bone."
         }
       ]
+    },
+    {
+      "id": "SkarrStalkerDiveAbility",
+      "names": {
+        "english": "Stalker's Dive"
+      },
+      "descriptions": {
+        "english": "Advance to the front of the floor and gain [multistrike]."
+      },
+      "is_an_ability": true,
+      "cooldown": 3,
+      "initial_cooldown": 1,
+      "targetless": true,
+      "targets_room": false,
+      "card_type": "spell",
+      "effects": [ "@SkarrStalkerAdvanceEffect", "@SkarrStalkerMultistrikeEffect" ]
     }
   ],
   "characters": [
   {
-    "id": "SkarrScoutCharacter",
+    "id": "SkarrStalkerCharacter",
     "names": {
-      "english": "Skarr Scout"
+      "english": "Skarr Stalker"
     },
-    "character_art": "@SkarrScoutCharacterArt",
-    "size": 1,
+    "character_art": "@SkarrStalkerCharacterArt",
+    "size": 2,
     "health": 15,
-    "attack_damage": 15,
+    "attack_damage": 20,
     "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
-    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpawnBugsnaxOnShiftTrigger" ],
-    "ability": "@SkarrRoamAbility"
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
+    "ability": "@SkarrStalkerDiveAbility",
+    "starting_status_effects": [
+      {
+        "status": "multistrike",
+        "count": 1
+      }
+    ]
   }
   ],
   "effects": [
     {
-      "id": "SpawnSkarrScoutDraftUnit",
+      "id": "SpawnSkarrStalkerDraftUnit",
       "name": "@CardEffectSpawnMonster",
       "target_mode": "room",
-      "param_character": "@SkarrScoutCharacter"
+      "param_character": "@SkarrStalkerCharacter"
+    },
+    {
+      "id": "SkarrStalkerAdvanceEffect",
+      "name": "CardEffectFloorRearrange",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 0
+    },
+    {
+      "id": "SkarrStalkerMultistrikeEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "param_status_effects": [
+        {
+          "status": "multistrike",
+          "count": 1
+        }
+      ]
     }
   ],
   "game_objects": [
     {
-      "id": "SkarrScoutCardArt",
+      "id": "SkarrStalkerCardArt",
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@SkarrScoutCardSprite"
+          "sprite": "@SkarrStalkerCardSprite"
         }
       }
     },
     {
-      "id": "SkarrScoutCharacterArt",
+      "id": "SkarrStalkerCharacterArt",
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@SkarrScoutCharacterSprite"
+          "sprite": "@SkarrStalkerCharacterSprite"
         }
       }
     }
   ],
   "sprites": [
     {
-      "id": "SkarrScoutCardSprite",
-      "path": "textures/skarr/SkarrScoutSprite.png"
+      "id": "SkarrStalkerCardSprite",
+      "path": "textures/skarr/SkarrStalkerSprite.png"
     },
     {
-      "id": "SkarrScoutCharacterSprite",
-      "path": "textures/skarr/SkarrScoutSprite.png"
+      "id": "SkarrStalkerCharacterSprite",
+      "path": "textures/skarr/SkarrStalkerSprite.png"
     }
   ]
 }

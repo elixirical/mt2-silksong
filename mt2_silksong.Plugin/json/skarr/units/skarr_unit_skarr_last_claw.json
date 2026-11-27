@@ -1,0 +1,77 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrLastClaw",
+      "names": {
+        "english": "Last Claw"
+      },
+      "card_art": "@SkarrLastClawCardArt",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrLastClawDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Elite former hunter acting as the final line of defence before their mother."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrLastClawCharacter",
+    "names": {
+      "english": "Last Claw"
+    },
+    "character_art": "@SkarrLastClawCharacterArt",
+    "size": 2,
+    "health": 30,
+    "attack_damage": 35,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ]
+  }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrLastClawDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrLastClawCharacter"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrLastClawCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrLastClawCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrLastClawCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrLastClawCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrLastClawCardSprite",
+      "path": "textures/skarr/SkarrLastClawSprite.png"
+    },
+    {
+      "id": "SkarrLastClawCharacterSprite",
+      "path": "textures/skarr/SkarrLastClawSprite.png"
+    }
+  ]
+}

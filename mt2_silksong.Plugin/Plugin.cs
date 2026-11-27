@@ -44,7 +44,8 @@ namespace mt2_silksong.Plugin
                         "json/skarr/units/skarr_unit_skarrwing.json",
                         "json/skarr/units/skarr_unit_skarr_scout.json",
                         "json/skarr/units/skarr_unit_skarrgard.json",
-                        "json/skarr/units/skarr_unit_skarr_spear.json"
+                        "json/skarr/units/skarr_unit_skarr_spear.json",
+                        "json/skarr/units/skarr_unit_skarr_stalker.json"
                         // Clan Definition
                         //"json/clan/silksong_clan.json",
                         // Required: Clan Map Banner Node definition and Card Pool

@@ -51,6 +51,9 @@
     <None Update="json\skarr\units\skarr_unit_skarr_stalker.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="json\skarr\units\skarr_unit_skarr_last_claw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

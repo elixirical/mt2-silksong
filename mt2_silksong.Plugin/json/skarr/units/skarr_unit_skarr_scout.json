@@ -7,7 +7,7 @@
         "english": "Skarr Scout"
       },
       "card_art": "@SkarrScoutCardArt",
-      "cost": 1,
+      "cost": 2,
       "card_type": "monster",
       "rarity": "common",
       "class": "@ClassSkarr",
@@ -29,9 +29,9 @@
       "english": "Skarr Scout"
     },
     "character_art": "@SkarrScoutCharacterArt",
-    "size": 1,
-    "health": 15,
-    "attack_damage": 15,
+    "size": 2,
+    "health": 20,
+    "attack_damage": 20,
     "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
     "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpawnBugsnaxOnShiftTrigger" ],
     "ability": "@SkarrRoamAbility"

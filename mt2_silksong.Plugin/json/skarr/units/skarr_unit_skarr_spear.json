@@ -33,7 +33,7 @@
     "health": 15,
     "attack_damage": 30,
     "subtypes": [ "@BasicSubtype" ],
-    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpearScaleTrigger" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpearScaleTrigger" ]
   }
 ],
   "effects": [
@@ -63,9 +63,9 @@
       "id": "SkarrSpearScaleTrigger",
       "trigger": "@SkarrNibble",
       "descriptions": {
-        "english": "[@SkarrNibble] +[effect1.power][attack] / +[effect0.power][health]"
+        "english": "[@SkarrNibble] +[effect1.power][attack]/+[effect0.power][health]"
       },
-      "effects": [ "@SkarrgardScaleHpEffect", "@SkarrgardScaleDmgEffect" ]
+      "effects": [ "@SkarrSpearScaleHpEffect", "@SkarrSpearScaleDmgEffect" ]
     }
   ],
   "game_objects": [
