@@ -1,0 +1,78 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrScout",
+      "names": {
+        "english": "Skarr Scout"
+      },
+      "card_art": "@SkarrScoutCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrScoutDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Young ant hunter wielding sickles carved from teeth. Will often call for aid if danger comes close."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrScoutCharacter",
+    "names": {
+      "english": "Skarr Scout"
+    },
+    "character_art": "@SkarrScoutCharacterArt",
+    "size": 1,
+    "health": 15,
+    "attack_damage": 15,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpawnBugsnaxOnShiftTrigger" ],
+    "ability": "@SkarrRoamAbility"
+  }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrScoutDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrScoutCharacter"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrScoutCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrScoutCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrScoutCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrScoutCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrScoutCardSprite",
+      "path": "textures/skarr/SkarrScoutSprite.png"
+    },
+    {
+      "id": "SkarrScoutCharacterSprite",
+      "path": "textures/skarr/SkarrScoutSprite.png"
+    }
+  ]
+}

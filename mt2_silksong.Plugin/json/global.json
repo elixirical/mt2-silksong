@@ -4,11 +4,10 @@
     {
       "id": "Consume",
       "name": "CardTraitExhaustState"
-    }
-  ],
+    }],
   "tracked_value_types": [
-    {
-      "id": "mt2ss_silkcounter"
-    }
-  ]
+      {
+        "id": "SilkCounter"
+      }
+    ]
 }

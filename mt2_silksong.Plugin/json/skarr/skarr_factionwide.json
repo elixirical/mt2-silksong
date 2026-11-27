@@ -1,0 +1,102 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrRoamAbility",
+      "names": {
+        "english": "Roam"
+      },
+      "descriptions": {
+        "english": "Move to a targeted location on this floor."
+      },
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "effects": [
+        "@SkarrRoamEffect"
+      ],
+      "card_art": {
+        "asset_name": "Assets/GameData/Cards/UnitAbility/Prefabs/UnitAbilitySound_AngelFlightAbility.prefab",
+        "asset_guid": "b7d9137dc005eb345800500fcaa4823f"
+      },
+      "cooldown": 2,
+      "is_an_ability": true,
+      "initial_keyboard_target": "front_friendly",
+      "can_ability_target_other_floors": false
+    },
+    {
+      "id": "SkarrFlightAbility",
+      "names": {
+        "english": "Flight"
+      },
+      "descriptions": {
+        "english": "Move to a targeted location on any floor."
+      },
+      "card_type": "spell",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "effects": [
+        "@SkarrFlightEffect"
+      ],
+      "card_art": {
+        "asset_name": "Assets/GameData/Cards/UnitAbility/Prefabs/UnitAbilitySound_AngelFlightAbility.prefab",
+        "asset_guid": "b7d9137dc005eb345800500fcaa4823f"
+      },
+      "cooldown": 2,
+      "is_an_ability": true,
+      "initial_keyboard_target": "front_friendly",
+      "can_ability_target_other_floors": true
+    }
+  ], 
+  "card_pools": [
+    {
+      "id": "BugsnaxPool",
+      "cards": ["@SkarrBugSnack"]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SkarrSpawnBugsnaxEffect",
+      "name": "CardEffectAddBattleCard",
+      "param_int": 3,
+      "param_int_2": 1,
+      "param_card_pool": "@BugsnaxPool",
+      "param_bool": true
+    },
+    {
+      "id": "SkarrRoamEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    },
+    {
+      "id": "SkarrFlightEffect",
+      "name": "CardEffectUnitAbilityTeleport"
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "SkarrSpawnBugsnaxOnDeathTrigger",
+      "trigger": "on_death",
+      "descriptions": {
+        "english": "Add a bugsnack to your hand."
+      },
+      "effects": [ "@SkarrSpawnBugsnaxEffect" ]
+    },
+    {
+      "id": "SkarrSpawnBugsnaxOnShiftTrigger",
+      "trigger": "on_shift",
+      "descriptions": {
+        "english": "Add a bugsnack to your hand."
+      },
+      "effects": [ "@SkarrSpawnBugsnaxEffect" ]
+    }
+  ],
+  "character_trigger_types": [{
+    "id": "SkarrNibble",
+    "names": {
+      "english": "Nibble"
+    },
+    "descriptions": {
+      "english": "Triggers when a Bug Snack is played."
+    }
+  }]
+}

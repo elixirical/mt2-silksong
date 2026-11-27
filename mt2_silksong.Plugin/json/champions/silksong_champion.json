@@ -28,7 +28,7 @@
         "english": "Hornet, Red Maiden"
       },
       "character_art": "@PharloomChampionHornetCharacterArt",
-      "size": 6,
+      "size": 5,
       "health": 7,
       "attack_damage": 67,
       "subtypes": [ "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34" ]

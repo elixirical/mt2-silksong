@@ -1,0 +1,78 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "Skarrwing",
+      "names": {
+        "english": "Skarrwing"
+      },
+      "card_art": "@SkarrwingCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "MegaPool" ],
+      "effects": [ "@SpawnSkarrwingDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Darting predator that clings fast to roofs and outcrops, often summoned to aid its larger companions."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrwingCharacter",
+    "names": {
+      "english": "Skarrwing"
+    },
+    "character_art": "@SkarrwingCharacterArt",
+    "size": 1,
+    "health": 7,
+    "attack_damage": 6,
+    "subtypes": [ "@BasicSubtype" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
+    "ability": "@SkarrFlightAbility"
+  }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrwingDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrwingCharacter"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrwingCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrwingCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrwingCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrwingCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrwingCardSprite",
+      "path": "textures/skarr/SkarrwingSprite.png"
+    },
+    {
+      "id": "SkarrwingCharacterSprite",
+      "path": "textures/skarr/SkarrwingSprite.png"
+    }
+  ]
+}

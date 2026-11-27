@@ -1,0 +1,63 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [{
+    "id": "SkarrBugSnack",
+    "cost": 0,
+    "card_type": "spell",
+    "names": {
+      "english": "Bug Snack"
+    },
+    "descriptions": {
+      "english": "Give target unit +[effect0.upgrade.bonushp] max health and +[effect0.upgrade.bonusdamage][attack]."
+    },
+    "rarity": "uncommon",
+    "targets_room": true,
+    "targetless": false,
+    "class": "@ClassSkarr",
+    "card_art": "@SkarrBugSnackCardArt",
+    "traits": [ "@SkarrBugSnackSelfPurgeTrait" ],
+    "effects": [ "@SkarrBugSnackUpgradeEffect" ],
+    "pools": [ "@BugsnaxPool" ]
+  }
+  ],
+  "effects": [
+    {
+      "id": "SkarrBugSnackUpgradeEffect",
+      "name": "CardEffectAddCardUpgradeToUnits",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_upgrade": "@SkarrBugSnackUpgrade",
+      "param_int_3": 0
+    }
+  ],
+  "upgrades": [
+    {
+    "id": "SkarrBugSnackUpgrade",
+    "bonus_damage": 3,
+    "bonus_hp": 3
+  }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrBugSnackCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrBugSnackCardSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrBugSnackCardSprite",
+      "path": "textures/card_art/BasicCommonSpell.png"
+    }
+  ],
+  "traits": [
+    {
+      "id": "SkarrBugSnackSelfPurgeTrait",
+      "name": "CardTraitSelfPurge"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrSwarm",
+      "names": {
+        "english": "Skarr Swarm"
+      },
+      "card_art": "@SkarrSwarmCardArt",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "rare",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrSwarmDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "A swarm of Skarr united in purpose to stave the clan from hunger."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrSwarmCharacter",
+    "names": {
+      "english": "Skarr Swarm"
+    },
+    "character_art": "@SkarrSwarmCharacterArt",
+    "size": 1,
+    "health": 3,
+    "attack_damage": 5,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@SkarrSwarmScaleTrigger", "@SkarrSpawnBugsnaxOnDeathTrigger" ]
+  }
+],
+  "character_triggers": [
+    {
+      "id": "SkarrSwarmScaleTrigger",
+      "trigger": "on_any_unit_death_on_floor",
+      "descriptions": {
+        "english": "Give friendly units +[effect0.power][health] / +[effect1.power][attack]."
+      },
+      "effects": [ "@SkarrSwarmScaleHpEffect", "@SkarrSwarmScaleDmgEffect" ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrSwarmDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrSwarmCharacter"
+    },
+    {
+      "id": "SkarrSwarmScaleHpEffect",
+      "name": "@CardEffectBuffMaxHealth",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "SkarrSwarmScaleDmgEffect",
+      "name": "@CardEffectBuffDamage",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "param_int": 1
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrSwarmCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrSwarmCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrSwarmCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrSwarmCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrSwarmCardSprite",
+      "path": "textures/card_art/BasicDraftUnit.png"
+    },
+    {
+      "id": "SkarrSwarmCharacterSprite",
+      "path": "textures/character_art/BasicDraftUnit.png"
+    }
+  ]
+}

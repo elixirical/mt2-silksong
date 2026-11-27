@@ -1,0 +1,61 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "KarmelitaStarter",
+      "cost": 1,
+      "names": {
+        "english": "Aria"
+      },
+      "descriptions": {
+        "english": "Deal [effect0.power] damage."
+      },
+      "rarity": "common",
+      "targets_room": true,
+      "targetless": false,
+      "class": "@ClassSkarr",
+      "card_art": "@KarmelitaStarterCardArt",
+      "pools": [
+        "MegaPool"
+      ],
+      "traits": [
+        "@PiercingTrait"
+      ],
+      "effects": [
+        "@Deal5Damage"
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "PiercingTrait",
+      "name": "CardTraitIgnoreArmor"
+    }
+  ],
+  "effects": [
+    {
+      "id": "Deal5Damage",
+      "name": "CardEffectDamage",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_int": 5
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "KarmelitaStarterCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@KarmelitaStarterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "KarmelitaStarterSprite",
+      "path": "textures/NotHornBreak.png"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "map_nodes": [
+    {
+      "id": "RewardNodeUnitPackSkarrClan",
+      "type": "reward",
+      "map_icon": "@SkarrBannerMapIcon",
+      "minimap_icon": "@SkarrClanBannerMinimapIcon",
+      "prefab": "@SkarrClanMapIcon",
+      "titles": {
+        "english": "Skarr Banner"
+      },
+      "descriptions": {
+        "english": "Gain a Skarr Unit"
+      },
+      "pools": [
+        "RandomChosenMainClassUnit",
+        "RandomChosenSubClassUnit"
+      ],
+      "is_banner_node": true,
+      "extensions": [
+        {
+          "reward": {
+            "class": "@ClassSkarr",
+            "rewards": [
+              "@SkarrBannerReward"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "id": "SkarrBannerReward",
+      "type": "draft",
+      "costs": [ 100 ],
+      "extensions": [
+        {
+          "draft": {
+            "draft_pool": "@UnitsSkarrClanBanner",
+            "class_type": "main|subclass|nonclass",
+            "draft_options_count": 2,
+            "rarity_floor": "uncommon",
+            "ignore_relic_rarity_override": true,
+            "is_service_merchant_reward": true
+          }
+        }
+      ]
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "UnitsSkarrClanBanner"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrClanMapIcon",
+      "type": "map_node_icon",
+      "extensions": {
+        "map_node_icon": {
+          "disabled_sprite": "@SkarrBannerDisabledMapIcon",
+          "enabled_sprite": "@SkarrBannerEnabledMapIcon",
+          "frozen_sprite": "@SkarrBannerFrozenMapIcon",
+          "visited_sprite_disabled": "@SkarrBannerVisitedDisabledIcon"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrBannerMapIcon",
+      "path": "textures/banners/PharloomBanner_MapIcon.png"
+    },
+    {
+      "id": "SkarrClanBannerMinimapIcon",
+      "path": "textures/banners/PharloomClanBannerMinimapIcon.png"
+    },
+    {
+      "id": "SkarrBannerDisabledMapIcon",
+      "path": "textures/banners/PharloomBanner_Disabled.png"
+    },
+    {
+      "id": "SkarrBannerEnabledMapIcon",
+      "path": "textures/banners/PharloomBanner_Enabled.png"
+    },
+    {
+      "id": "SkarrBannerFrozenMapIcon",
+      "path": "textures/banners/PharloomBanner_Frozen.png"
+    },
+    {
+      "id": "SkarrBannerVisitedDisabledIcon",
+      "path": "textures/banners/PharloomBanner_VisitedDisabled.png"
+    }
+  ]
+}

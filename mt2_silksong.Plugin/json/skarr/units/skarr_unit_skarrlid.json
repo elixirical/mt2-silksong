@@ -1,0 +1,78 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "Skarrlid",
+      "names": {
+        "english": "Skarrlid"
+      },
+      "card_art": "@SkarrlidCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "MegaPool" ],
+      "effects": [ "@SpawnSkarrlidDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Small burrowing ant, servant to the larger Skarr. These bugs work mainly as finders and foragers for the warriors of their tribe. Combat has not long been their nature."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrlidCharacter",
+    "names": {
+      "english": "Skarrlid"
+    },
+    "character_art": "@SkarrlidCharacterArt",
+    "size": 1,
+    "health": 10,
+    "attack_damage": 10,
+    "subtypes": [ "@BasicSubtype" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
+    "ability": "@SkarrRoamAbility"
+  }
+],
+  "effects": [
+    {
+      "id": "SpawnSkarrlidDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrlidCharacter"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrlidCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrlidCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrlidCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrlidCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrlidCardSprite",
+      "path": "textures/skarr/SkarrlidSprite.png"
+    },
+    {
+      "id": "SkarrlidCharacterSprite",
+      "path": "textures/skarr/SkarrlidSprite.png"
+    }
+  ]
+}

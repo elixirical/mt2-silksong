@@ -1,0 +1,26 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "class_card_styles": [
+    {
+      "id": "SkarrClanCardStyle",
+      "equipment_card_frame_sprite": "@SkarrClanEquipmentRoomBorder",
+      "unit_card_frame_sprite": "@SkarrClanUnitBorder",
+      "room_card_frame_sprite": "@SkarrClanEquipmentRoomBorder",
+      "spell_card_frame_sprite": "@SkarrClanSpellBorder"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrClanEquipmentRoomBorder",
+      "path": "textures/card_borders/BasicCardBorderEquipmentRoom.png"
+    },
+    {
+      "id": "SkarrClanUnitBorder",
+      "path": "textures/card_borders/BasicCardBorderUnit.png"
+    },
+    {
+      "id": "SkarrClanSpellBorder",
+      "path": "textures/card_borders/BasicCardBorderSpell.png"
+    }
+  ]
+}

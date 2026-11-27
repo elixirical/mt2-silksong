@@ -1,0 +1,101 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrSpear",
+      "names": {
+        "english": "Spear Skarr"
+      },
+      "card_art": "@SkarrSpearCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "uncommon",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrSpearDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Huge ant hunter tasked to protect the stores and passages of its tribe."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrSpearCharacter",
+    "names": {
+      "english": "Spear Skarr"
+    },
+    "character_art": "@SkarrSpearCharacterArt",
+    "size": 2,
+    "health": 15,
+    "attack_damage": 30,
+    "subtypes": [ "@BasicSubtype" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrSpearScaleTrigger" ],
+  }
+],
+  "effects": [
+    {
+      "id": "SpawnSkarrSpearDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrSpearCharacter"
+    },
+    {
+      "id": "SkarrSpearScaleHpEffect",
+      "name": "@CardEffectBuffMaxHealth",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "SkarrSpearScaleDmgEffect",
+      "name": "@CardEffectBuffDamage",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 5
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "SkarrSpearScaleTrigger",
+      "trigger": "@SkarrNibble",
+      "descriptions": {
+        "english": "[@SkarrNibble] +[effect1.power][attack] / +[effect0.power][health]"
+      },
+      "effects": [ "@SkarrgardScaleHpEffect", "@SkarrgardScaleDmgEffect" ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrSpearCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrSpearCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrSpearCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrSpearCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrSpearCardSprite",
+      "path": "textures/skarr/SkarrSpearSprite.png"
+    },
+    {
+      "id": "SkarrSpearCharacterSprite",
+      "path": "textures/skarr/SkarrSpearSprite.png"
+    }
+  ]
+}

@@ -11,24 +11,29 @@ using UnityEngine;
 
 namespace mt2_silksong.Plugin.code;
 
-public abstract class SilkCounter : AbstractTrackedValueHandler
+public abstract class SilkCounter
 {
-    /*private int _silk;
-
-    private void incrementSilk(int increment)
-    {
-        int sum = _silk + increment; 
-        if (sum > 0 | sum <= 14)
-        {
-            _silk = sum;
-        }
-    }*/
-    //public abstract int GetValue(CardStatistics.StatValueData statValueData);
-    //public abstract void IncrementValue(CardState? card, int amount, CardStatistics.EntryDuration entryDuration = CardStatistics.EntryDuration.ThisTurn);
-    
     public static CardStatistics.TrackedValueType silkCounter;
+    
+    //private static int _silk;
 
-    //public delegate int TrackedValueGetter(CardStatistics.StatValueData statValueData, IReadOnlyDictionary<CardState, CardStatsEntry> deckStats, ICoreGameManagers coreGameManagers);
+    public abstract int GetValue(CardStatistics.TrackedValueType statValueData);
+
+    public abstract void IncrementValue(CardState? card, int amount,
+        CardStatistics.EntryDuration entryDuration = CardStatistics.EntryDuration.ThisTurn);
+
+    public abstract void Reset();
+
+    /*public delegate int TrackedValueGetter(CardStatistics.StatValueData statValueData,
+        IReadOnlyDictionary<CardState, CardStatsEntry> deckStats, ICoreGameManagers coreGameManagers);*/
+
+    /*static int getSilk(CardStatistics.StatValueData statValueData,
+        IReadOnlyDictionary<CardState, CardStatsEntry> deckStats, ICoreGameManagers coreGameManagers)
+    {
+        return coreGameManagers.GetCardStatistics().GetStatValue(statValueData);
+    }*/
+
+    //private TrackedValueGetter test = getSilk;
     
     [HarmonyPatch(typeof(SaveManager), "IncrementRunStat")]
     internal class SilkCounterPatch
@@ -43,13 +48,13 @@ public abstract class SilkCounter : AbstractTrackedValueHandler
         }
     }
     
-    private void Awake()
+    static void Main(string[] args)
     {
         Railend.ConfigurePostAction(
             c =>
             {
                 var trackedValueRegister = c.GetInstance<IRegister<CardStatistics.TrackedValueType>>();
-                silkCounter = trackedValueRegister.GetValueOrDefault(MyPluginInfo.PLUGIN_GUID.GetId(TemplateConstants.TrackedValueTypeEnum, "mt2ss_silkcounter"));
+                silkCounter = trackedValueRegister.GetValueOrDefault(MyPluginInfo.PLUGIN_GUID.GetId(TemplateConstants.TrackedValueTypeEnum, "SilkCounter"));
                 silkCounter.SetTrackedValueHandler(new SimpleGlobalTrackedValueHandler());
             });
     }

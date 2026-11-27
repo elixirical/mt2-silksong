@@ -1,0 +1,98 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "classes": [
+    {
+      "id": "ClassSkarr",
+      "titles": {
+        "english": "Skarr"
+      },
+      "descriptions": {
+        "english": "Embark as the forces of the Skarr against the Titan incursion."
+      },
+      "subclass_descriptions": {
+        "english": "The Skarr come to the aid of Hell!"
+      },
+      "event_titles": {
+        "english": "<wonderous>Ant</wonderous>"
+      },
+      "icons": {
+        "small": "@SkarrClanSmallIcon",
+        "medium": "@SkarrClanMediumIcon",
+        "large": "@SkarrClanLargeIcon",
+        "silhouette": "@SkarrClanSilhouetteIcon"
+      },
+      "card_draft_icon": "@SkarrCardDraftIcon",
+      "class_select_character_displays": [
+        "@SkarrKarmelitaClassDisplayCharacterArt"
+      ],
+      "card_style": "@SkarrClanCardStyle",
+      "ui_color": {
+        "r": 0.804,
+        "g": 0.447,
+        "b": 0.196
+      },
+      "ui_color_dark": {
+        "r": 0.494,
+        "g": 0.275,
+        "b": 0.122
+      },
+      "ui_gradient": [
+        {
+          "time": 0.0,
+          "color": {
+            "r": 0.804,
+            "g": 0.447,
+            "b": 0.196
+          }
+        },
+        {
+          "time": 1.0,
+          "color": {
+            "r": 0.494,
+            "g": 0.275,
+            "b": 0.122
+          }
+        }
+      ],
+      "champions": [
+        {
+          "id": "SkarrChampionKarmelita",
+          "card_data": "@SkarrKarmelitaCard",
+          "starter_card": "@KarmelitaStarter",
+          "upgrade_tree": [
+            [
+              "@SkarrKarmelitaRazorspinDiveI",
+              "@SkarrKarmelitaRazorspinDiveII",
+              "@SkarrKarmelitaRazorspinDiveIII"
+            ]
+          ],
+          "icon": "@SkarrKarmelitaIcon",
+          "locked_icon": "@SkarrKarmelitaLockedIcon",
+          "portrait": "@SkarrKarmelitaPortrait"
+        }
+      ]
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrClanSmallIcon",
+      "path": "textures/icons/BasicClanSmallIcon.png"
+    },
+    {
+      "id": "SkarrClanMediumIcon",
+      "path": "textures/icons/BasicClanMediumIcon.png"
+    },
+    {
+      "id": "SkarrClanLargeIcon",
+      "path": "textures/icons/BasicClanLargeIcon.png"
+    },
+    {
+      "id": "SkarrClanSilhouetteIcon",
+      "path": "textures/icons/BasicClanSilhouetteIcon.png"
+    },
+    {
+      "id": "SkarrCardDraftIcon",
+      "path": "textures/icons/BasicClanCardDraft.png"
+    }
+  ]
+}

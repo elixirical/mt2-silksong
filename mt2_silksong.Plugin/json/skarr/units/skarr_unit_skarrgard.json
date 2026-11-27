@@ -1,0 +1,101 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "Skarrgard",
+      "names": {
+        "english": "Skarrgard"
+      },
+      "card_art": "@SkarrgardCardArt",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner" ],
+      "effects": [ "@SpawnSkarrgardDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "Huge ant hunter tasked to protect the stores and passages of its tribe."
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrgardCharacter",
+    "names": {
+      "english": "Skarrgard"
+    },
+    "character_art": "@SkarrgardCharacterArt",
+    "size": 3,
+    "health": 30,
+    "attack_damage": 15,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger", "@SkarrgardScaleTrigger" ]
+  }
+],
+  "effects": [
+    {
+      "id": "SpawnSkarrgardDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrgardCharacter"
+    },
+    {
+      "id": "SkarrgardScaleHpEffect",
+      "name": "@CardEffectBuffMaxHealth",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 5
+    },
+    {
+      "id": "SkarrgardScaleDmgEffect",
+      "name": "@CardEffectBuffDamage",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "SkarrgardScaleTrigger",
+      "trigger": "@SkarrNibble",
+      "descriptions": {
+        "english": "[@SkarrNibble] +[effect1.power][attack] / +[effect0.power][health]"
+      },
+      "effects": [ "@SkarrgardScaleHpEffect", "@SkarrgardScaleDmgEffect" ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrgardCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrgardCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrgardCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrgardCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrgardCardSprite",
+      "path": "textures/skarr/SkarrgardSprite.png"
+    },
+    {
+      "id": "SkarrgardCharacterSprite",
+      "path": "textures/skarr/SkarrgardSprite.png"
+    }
+  ]
+}

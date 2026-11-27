@@ -40,7 +40,7 @@
     {
       "id": "ScaleHealbySilk",
       "name": "CardTraitScalingHeal",
-      "param_tracked_value": "@mt2ss_silkcounter",
+      "param_tracked_value": "@SilkCounter",
       "param_entry_duration": "this_battle"
     }
   ],

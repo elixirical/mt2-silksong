@@ -1,7 +1,9 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using Conductor.Extensions;
 using Conductor.TrackedValues;
 using HarmonyLib;
+using mt2_silksong.Plugin.code;
 using TrainworksReloaded.Base;
 using TrainworksReloaded.Base.Extensions;
 using TrainworksReloaded.Core;
@@ -28,22 +30,37 @@ namespace mt2_silksong.Plugin
                     // Be sure to include any new json files if you add more.
                     c.AddMergedJsonFile(
                         "json/global.json",
+                        "json/tracked_values.json",
+                        "json/skarr/champions/karmelita.json",
+                        "json/skarr/champions/karmelita_starter.json",
+                        "json/skarr/skarr_clan.json",
+                        "json/skarr/skarr_clan_banner.json",
+                        "json/skarr/skarr_clan_card_frame.json",
+                        "json/skarr/skarr_clan_subtypes.json",
+                        "json/skarr/units/skarr_unit_skarrswarm.json",
+                        "json/skarr/skarr_factionwide.json",
+                        "json/skarr/spells/skarr_bug_snack.json",
+                        "json/skarr/units/skarr_unit_skarrlid.json",
+                        "json/skarr/units/skarr_unit_skarrwing.json",
+                        "json/skarr/units/skarr_unit_skarr_scout.json",
+                        "json/skarr/units/skarr_unit_skarrgard.json",
+                        "json/skarr/units/skarr_unit_skarr_spear.json"
                         // Clan Definition
-                        "json/clan/silksong_clan.json",
+                        //"json/clan/silksong_clan.json",
                         // Required: Clan Map Banner Node definition and Card Pool
-                        "json/clan/silksong_clan_banner.json",
+                        //"json/clan/silksong_clan_banner.json",
                         // Optional: Custom Card Border (if removed edit clan.json)
-                        "json/clan/silksong_clan_card_frame.json",
+                        //"json/clan/silksong_clan_card_frame.json",
                         // Optional: Custom Clan Subtypes used by units.
-                        "json/clan/silksong_clan_subtypes.json",
+                        //"json/clan/silksong_clan_subtypes.json",
                         // Required: A Clan Champion with one Upgrade Path.
-                        "json/champions/silksong_champion.json",
+                        //"json/champions/silksong_champion.json",
                         // Spell Cards
-                        "json/pharloom_cards/scaling_heal.json",
-                        "json/pharloom_cards/spells/hornet_silk_heal.json",
-                        "json/spells/NotHornBreak.json",
-                        "json/spells/GiveEveryoneArmor.json",
-                        "json/spells/NotRazorsharpEdge.json"
+                        //"json/pharloom_cards/scaling_heal.json",
+                        //"json/pharloom_cards/spells/hornet_silk_heal.json"
+                        //"json/spells/NotHornBreak.json",
+                        //"json/spells/GiveEveryoneArmor.json",
+                        //"json/spells/NotRazorsharpEdge.json"
                         // Starter (required).
                         // Units
                         // Non Banner Unit, that is draftable as a Battle Reward.
@@ -52,6 +69,13 @@ namespace mt2_silksong.Plugin
                         // Shop Upgrades (Enhancer)
                         // Artifacts
                     );
+                }
+            );
+            Roundhouse.WhenReady(MyPluginInfo.PLUGIN_GUID,
+                ctx => 
+                { 
+                    var trigger = ctx.GetCharacterTriggerEnum("SkarrNibble");
+                    trigger.SetToTriggerOnCardPlayed(SkarrOnBugsnaxPlayed.SkarrBugsnaxPlayedTrigger);
                 }
             );
 
