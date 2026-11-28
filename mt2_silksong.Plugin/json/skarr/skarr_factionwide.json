@@ -98,5 +98,19 @@
     "descriptions": {
       "english": "Triggers when a Bug Snack is played."
     }
-  }]
+  }],
+  "localization_terms": [
+    {
+      "key": "SkarrQueensGuardTrait_CardText",
+      "texts": {
+        "english": "Queen's Guard"
+      }
+    },
+    {
+      "key": "SkarrQueensGuardTrait_TooltipText",
+      "texts": {
+        "english": "Deals double damage to dazed characters."
+      }
+    }
+  ]
 }

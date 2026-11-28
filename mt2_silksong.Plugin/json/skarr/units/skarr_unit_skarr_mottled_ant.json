@@ -1,0 +1,125 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrMottledAnt",
+      "names": {
+        "english": "Mottled Child"
+      },
+      "card_art": "@SkarrMottledAntCardArt",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "descriptions": {
+        "english": "[shift]: Gain +1[health]/+1 [damage]"
+      },
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrMottledAntDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "<i>Our mark is no curse...</i>"
+        }
+      ]
+    },
+    {
+      "id": "Curvesickle",
+      "names": {
+        "english": "Curvesickle"
+      },
+      "descriptions": {
+        "english": "Deal damage equal to this unit's power to the front enemy unit."
+      },
+      "is_an_ability": true,
+      "cooldown": 1,
+      "initial_cooldown": 0,
+      "targetless": true,
+      "targets_room": false,
+      "card_type": "spell",
+      "effects": [ "@SkarrMottledAntCurvesickleEffect" ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrMottledAntCharacter",
+    "names": {
+      "english": "Mottled Child"
+    },
+    "character_art": "@SkarrMottledAntCharacterArt",
+    "size": 1,
+    "health": 20,
+    "attack_damage": 15,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
+    "ability": "@Curvesickle"
+  }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrMottledAntDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrMottledAntCharacter"
+    },
+    {
+      "id": "SkarrMottledAntCurvesickleEffect",
+      "name": "CardEffectDamagePerSourceAttack",
+      "param_int": 1,
+      "target_mode": "front_in_room",
+      "target_team": "heroes"
+    },
+    {
+      "id": "SkarrMottledAntScaleHpEffect",
+      "name": "@CardEffectBuffMaxHealth",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    },
+    {
+      "id": "SkarrMottledAntScaleDmgEffect",
+      "name": "@CardEffectBuffDamage",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_int": 1
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "BuffMottledAntTrigger",
+      "trigger": "on_shift",
+      "effects": [ "@SkarrMottledAntScaleHpEffect", "@SkarrMottledAntScaleDmgEffect" ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrMottledAntCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrMottledAntCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrMottledAntCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrMottledAntCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrMottledAntCardSprite",
+      "path": "textures/skarr/MottledAnt.png"
+    },
+    {
+      "id": "SkarrMottledAntCharacterSprite",
+      "path": "textures/skarr/MottledAnt.png"
+    }
+  ]
+}

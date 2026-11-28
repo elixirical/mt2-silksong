@@ -47,7 +47,7 @@
     "character_art": "@SkarrStalkerCharacterArt",
     "size": 2,
     "health": 15,
-    "attack_damage": 20,
+    "attack_damage": 15,
     "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
     "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
     "ability": "@SkarrStalkerDiveAbility",

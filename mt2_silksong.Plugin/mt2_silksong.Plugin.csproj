@@ -54,6 +54,12 @@
     <None Update="json\skarr\units\skarr_unit_skarr_last_claw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="json\skarr\units\skarr_unit_skarr_mottled_ant.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="json\skarr\units\skarr_unit_skarr_mottled_elder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +87,8 @@
   <ItemGroup>
     <Compile Remove="code\SilkCounter.cs" />
     <Compile Remove="code\TriggerRoam.cs" />
+    <Compile Remove="code\SkarrQueensGuardTrait.cs" />
+    <Compile Remove="code\RoamDirection.cs" />
   </ItemGroup>
 </Project>
 

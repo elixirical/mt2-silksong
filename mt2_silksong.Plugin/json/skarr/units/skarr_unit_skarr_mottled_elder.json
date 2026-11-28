@@ -1,0 +1,104 @@
+﻿{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "SkarrMottledElder",
+      "names": {
+        "english": "Mottled Elder"
+      },
+      "card_art": "@SkarrMottledElderCardArt",
+      "cost": 2,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSkarr",
+      "targets_room": true,
+      "targetless": false,
+      "pools": [ "@UnitsSkarrClanBanner", "UnitsAllBanner" ],
+      "effects": [ "@SpawnSkarrMottledElderDraftUnit" ],
+      "lore_tooltips": [
+        {
+          "english": "<i>Rkraha. Uohk kha! Kha... kha mauak. Noku... gri?</i>"
+        }
+      ]
+    }
+  ],
+  "characters": [
+  {
+    "id": "SkarrMottledElderCharacter",
+    "names": {
+      "english": "Mottled Elder"
+    },
+    "character_art": "@SkarrMottledElderCharacterArt",
+    "size": 1,
+    "health": 20,
+    "attack_damage": 15,
+    "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
+    "triggers": [ "@MottledElderAscendTrigger", "@MottledElderDescendTrigger" ]
+  }
+  ],
+  "effects": [
+    {
+      "id": "SpawnSkarrMottledElderDraftUnit",
+      "name": "@CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@SkarrMottledElderCharacter"
+    },
+    {
+      "id": "SkarrMottledElderAddReanimateEffect",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "self",
+      "target_team": "monsters",
+      "param_status_effects": [
+        {
+          "status": "undying",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "MottledElderAscendTrigger",
+      "trigger": "post_attempted_ascension",
+      "descriptions": {
+        "english": " gain [effect0.status0.power]."
+      },
+      "effects": [ "@SkarrMottledElderAddReanimateEffect" ]
+    },
+    {
+      "id": "MottledElderDescendTrigger",
+      "trigger": "post_attempted_descension",
+      "effects": [ "@SkarrMottledElderAddReanimateEffect" ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "SkarrMottledElderCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@SkarrMottledElderCardSprite"
+        }
+      }
+    },
+    {
+      "id": "SkarrMottledElderCharacterArt",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@SkarrMottledElderCharacterSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "SkarrMottledElderCardSprite",
+      "path": "textures/skarr/MottledElder.png"
+    },
+    {
+      "id": "SkarrMottledElderCharacterSprite",
+      "path": "textures/skarr/MottledElder.png"
+    }
+  ]
+}

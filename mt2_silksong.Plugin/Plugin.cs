@@ -45,7 +45,10 @@ namespace mt2_silksong.Plugin
                         "json/skarr/units/skarr_unit_skarr_scout.json",
                         "json/skarr/units/skarr_unit_skarrgard.json",
                         "json/skarr/units/skarr_unit_skarr_spear.json",
-                        "json/skarr/units/skarr_unit_skarr_stalker.json"
+                        "json/skarr/units/skarr_unit_skarr_stalker.json",
+                        "json/skarr/units/skarr_unit_skarr_last_claw.json",
+                        "json/skarr/units/skarr_unit_skarr_mottled_ant.json",
+                        "json/skarr/units/skarr_unit_skarr_mottled_elder.json"
                         // Clan Definition
                         //"json/clan/silksong_clan.json",
                         // Required: Clan Map Banner Node definition and Card Pool
@@ -79,7 +82,7 @@ namespace mt2_silksong.Plugin
                     trigger.SetToTriggerOnCardPlayed(SkarrOnBugsnaxPlayed.SkarrBugsnaxPlayedTrigger);
                 }
             );
-
+            Conductor.Utilities.SetupTraitTooltips();
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
 
             // Uncomment if you need Harmony Patch support.

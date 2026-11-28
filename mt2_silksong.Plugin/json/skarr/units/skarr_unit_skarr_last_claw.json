@@ -19,7 +19,10 @@
         {
           "english": "Elite former hunter acting as the final line of defence before their mother."
         }
-      ]
+      ],
+      "descriptions": {
+        "english": "[@queens_guard]"
+      }
     }
   ],
   "characters": [
@@ -33,7 +36,13 @@
     "health": 30,
     "attack_damage": 35,
     "subtypes": [ "@BasicSubtype", "SubtypesData_BannerUnit" ],
-    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ]
+    "triggers": [ "@SkarrSpawnBugsnaxOnDeathTrigger" ],
+    "starting_status_effects": [
+      {
+        "status": "@queens_guard",
+        "count": 1
+      } 
+    ]
   }
   ],
   "effects": [
@@ -67,11 +76,44 @@
   "sprites": [
     {
       "id": "SkarrLastClawCardSprite",
-      "path": "textures/skarr/SkarrLastClawSprite.png"
+      "path": "textures/skarr/LastClawSprite.png"
     },
     {
       "id": "SkarrLastClawCharacterSprite",
-      "path": "textures/skarr/SkarrLastClawSprite.png"
+      "path": "textures/skarr/LastClawSprite.png"
+    },
+    {
+      "id": "QueensGuardIcon",
+      "path": "textures/icons/BasicRoomIcon.png"
+    }
+    ],
+    "atlas_icons": [
+    {
+      "id": "QueensGuardIcon",
+      "path": "textures/icons/EmptyRoomIcon.png"
+    }
+  ],
+  "status_effects": [
+    {
+      "id": "queens_guard",
+      "class_name": "@StatusEffectQueensGuardState",
+      "names": {
+        "english": "Queen's Guard"
+      },
+      "card_tooltips": {
+        "english": "Deal's double damage to enemies with daze."
+      },
+      "character_tooltips": {
+        "english": "Deal's double damage to enemies with daze."
+      },
+      "replacement_texts": {
+        "english": "<b>Queen's Guard</b>"
+      },
+      "is_propagatable": false,
+      "is_stackable": false,
+      "remove_when_triggered": false,
+      "trigger_stage": "on_pre_attacking",
+      "icon": "@QueensGuardIcon"
     }
   ]
 }
